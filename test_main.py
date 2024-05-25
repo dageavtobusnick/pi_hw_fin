@@ -13,8 +13,8 @@ def test_read_main_2():
 
 def test_read_main_3():
     phrase = None
-    assert main.translate_phrase(phrase) == 'Error: Некорректная \
-                                            фраза для перевода'
+    assert main.translate_phrase(phrase) == 'Error: Некорректная '\
+                                            'фраза для перевода'
 
 
 def test_read_main_4():
