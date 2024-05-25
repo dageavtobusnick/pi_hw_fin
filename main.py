@@ -12,8 +12,8 @@ if not Path(Path.cwd() / 'model').exists():
 tokenizer_en = AutoTokenizer.from_pretrained(Path.cwd()
                                              / 'model'
                                              / 'en_ru_local')
-model_en = AutoModelForSeq2SeqLM.from_pretrained(Path.cwd() 
-                                                 / 'model' 
+model_en = AutoModelForSeq2SeqLM.from_pretrained(Path.cwd()
+                                                 / 'model'
                                                  / 'en_ru_local')
 tokenizer_ru = AutoTokenizer.from_pretrained(Path.cwd()
                                              / 'model'
