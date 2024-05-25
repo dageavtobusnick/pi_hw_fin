@@ -9,17 +9,17 @@ if not Path(Path.cwd() / 'model').exists():
     load_models.load_model_en_ru()
     load_models.load_model_ru_en()
 
-tokenizer_en = AutoTokenizer.from_pretrained(Path.cwd() 
-                                             / 'model' 
+tokenizer_en = AutoTokenizer.from_pretrained(Path.cwd()
+                                             / 'model'
                                              / 'en_ru_local')
 model_en = AutoModelForSeq2SeqLM.from_pretrained(Path.cwd() 
                                                  / 'model' 
                                                  / 'en_ru_local')
-tokenizer_ru = AutoTokenizer.from_pretrained(Path.cwd() 
-                                             / 'model' 
+tokenizer_ru = AutoTokenizer.from_pretrained(Path.cwd()
+                                             / 'model'
                                              / 'ru_en_local')
-model_ru = AutoModelForSeq2SeqLM.from_pretrained(Path.cwd() 
-                                                 / 'model' 
+model_ru = AutoModelForSeq2SeqLM.from_pretrained(Path.cwd()
+                                                 / 'model'
                                                  / 'ru_en_local')
 
 
@@ -42,6 +42,7 @@ def translate_phrase(phrase):
     else:
         return translate_phrase_en(phrase)
         return translate_phrase_en(phrase)
+
 
 def translate_phrase_ru(phrase):
     inputs = tokenizer_ru(phrase, return_tensors="pt")
