@@ -19,41 +19,41 @@ def test_read_main_3():
 
 def test_read_main_4():
     phrase = ''
-    assert main.translate_phrase(phrase) == 'Error: Некорректная \
-                                            фраза для перевода'
+    assert main.translate_phrase(phrase) == 'Error: Некорректная '\
+                                            'фраза для перевода'
 
 
 def test_read_main_5():
     phrase = '2142112312423'
-    assert main.translate_phrase(phrase) == 'Error: Некорректная \
-                                            фраза для перевода'
+    assert main.translate_phrase(phrase) == 'Error: Некорректная '\
+                                            'фраза для перевода'
 
 
 def test_read_main_6():
     phrase = '../,.,/.,/.,'
-    assert main.translate_phrase(phrase) == 'Error: Некорректная \
-                                            фраза для перевода'
+    assert main.translate_phrase(phrase) == 'Error: Некорректная '\
+                                            'фраза для перевода'
 
 
 def test_read_main_7():
     phrase = '423434??///?...!!'
-    assert main.translate_phrase(phrase) == 'Error: Некорректная \
-                                            фраза для перевода'
+    assert main.translate_phrase(phrase) == 'Error: Некорректная '\
+                                            'фраза для перевода'
 
 
 def test_read_main_8():
     phrase = '           '
-    assert main.translate_phrase(phrase) == 'Error: Некорректная \
-                                            фраза для перевода'
+    assert main.translate_phrase(phrase) == 'Error: Некорректная '\
+                                            'фраза для перевода'
 
 
 def test_read_main_9():
     phrase = '!!???!??!?!'
-    assert main.translate_phrase(phrase) == 'Error: Некорректная \
-                                            фраза для перевода'
+    assert main.translate_phrase(phrase) == 'Error: Некорректная '\
+                                            'фраза для перевода'
 
 
 def test_read_main_10():
     phrase = '423434      ??///?...!!'
-    assert main.translate_phrase(phrase) == 'Error: Некорректная \
-                                            фраза для перевода'
+    assert main.translate_phrase(phrase) == 'Error: Некорректная '\
+                                            'фраза для перевода'
