@@ -9,10 +9,18 @@ if not Path(Path.cwd() / 'model').exists():
     load_models.load_model_en_ru()
     load_models.load_model_ru_en()
 
-tokenizer_en = AutoTokenizer.from_pretrained(Path.cwd() / 'model' / 'en_ru_local')
-model_en = AutoModelForSeq2SeqLM.from_pretrained(Path.cwd() / 'model' / 'en_ru_local')
-tokenizer_ru = AutoTokenizer.from_pretrained(Path.cwd() / 'model' / 'ru_en_local')
-model_ru = AutoModelForSeq2SeqLM.from_pretrained(Path.cwd() / 'model' / 'ru_en_local')
+tokenizer_en = AutoTokenizer.from_pretrained(Path.cwd() 
+                                             / 'model' 
+                                             / 'en_ru_local')
+model_en = AutoModelForSeq2SeqLM.from_pretrained(Path.cwd() 
+                                                 / 'model' 
+                                                 / 'en_ru_local')
+tokenizer_ru = AutoTokenizer.from_pretrained(Path.cwd() 
+                                             / 'model' 
+                                             / 'ru_en_local')
+model_ru = AutoModelForSeq2SeqLM.from_pretrained(Path.cwd() 
+                                                 / 'model' 
+                                                 / 'ru_en_local')
 
 
 def translate_phrase(phrase):
@@ -33,17 +41,17 @@ def translate_phrase(phrase):
         return translate_phrase_ru(phrase)
     else:
         return translate_phrase_en(phrase)
-
+        return translate_phrase_en(phrase)
 
 def translate_phrase_ru(phrase):
     inputs = tokenizer_ru(phrase, return_tensors="pt")
     output = model_ru.generate(**inputs, max_new_tokens=100)
-    out_text = tokenizer_ru.batch_decode(output, skip_special_tokens = True)
+    out_text = tokenizer_ru.batch_decode(output, skip_special_tokens=True)
     return out_text[0]
 
 
 def translate_phrase_en(phrase):
     inputs = tokenizer_en(phrase, return_tensors="pt")
     output = model_en.generate(**inputs, max_new_tokens=100)
-    out_text = tokenizer_en.batch_decode(output, skip_special_tokens = True)
+    out_text = tokenizer_en.batch_decode(output, skip_special_tokens=True)
     return out_text[0]
